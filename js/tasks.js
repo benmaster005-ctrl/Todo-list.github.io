@@ -3,7 +3,7 @@
  * @returns {Array}
  */
 async function fetchList(){
-    const response = await fetch('http://localhost:3000/todos')
+    const response = await fetch('https://totolist-nine.vercel.app/todos')
     if(response.ok){
         return response.json()
     }
@@ -78,7 +78,7 @@ class TodoList{
     * ajoute un nouveau todo a l'API
     */
     onSubmit(){
-        fetch('http://localhost:3000/todos', {
+        fetch('https://totolist-nine.vercel.app/todos', {
             method: "POST",
             headers : {"Content-Type": "application/json"},
             body : JSON.stringify({

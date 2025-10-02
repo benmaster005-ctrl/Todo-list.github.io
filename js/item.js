@@ -16,7 +16,7 @@ async function main(){
     const params = new URLSearchParams(window.location.search)
     const id = parseInt(params.get('id'), 10)
 
-    await fetch('http://localhost:3000/todos')
+    await fetch('https://totolist-nine.vercel.app/todos')
         .then(response => response.json())
         .then(data => data[0].todolist)
         .then(tasks => {
@@ -75,13 +75,13 @@ async function main(){
                 restoreBtn.addEventListener('click', reopenTask)
 
                 async function deleteTask(){
-                    await fetch(`http://localhost:3000/todos/${item.id}`, {
+                    await fetch(`https://totolist-nine.vercel.app/todos/${item.id}`, {
                         method : "DELETE"
                     })
                     window.location.href = "./tasks.html" 
                 }
                 async function reopenTask(){
-                    await fetch(`http://localhost:3000/todos/${item.id}`, {
+                    await fetch(`https://totolist-nine.vercel.app/todos/${item.id}`, {
                         method : "PUT",
                         headers : {
                             "Content-Type" : "application/json"
@@ -94,7 +94,7 @@ async function main(){
                     
                 }
                 async function endTask(){
-                    await fetch(`http://localhost:3000/todos/${item.id}`, {
+                    await fetch(`https://totolist-nine.vercel.app/todos/${item.id}`, {
                         method : "PUT",
                         headers : {
                             "Content-Type" : "application/json"

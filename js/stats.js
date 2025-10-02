@@ -7,7 +7,7 @@ container.style.justifyContent = 'center'
 
 async function statistic(){
     let count = 0
-    await fetch('http://localhost:3000/todos')
+    await fetch('https://totolist-nine.vercel.app/todos')
         .then(response => response.json())
         .then(r => r[0].todolist)
         .then(lists => {
